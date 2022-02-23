@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 /*import { BrowserRouter, Routes, Route } from 'react-router-dom';*/
 
 //vor v5 version
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -31,10 +31,13 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar />
-        <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/card/:user' component={Card} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/:user' component={Card} />
+        </Switch>
+
 
       </div>
     </BrowserRouter>
