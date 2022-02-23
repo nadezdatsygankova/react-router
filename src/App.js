@@ -1,12 +1,19 @@
 import NavBar from "./components/NavBar";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//this for v6 version
+/*import { BrowserRouter, Routes, Route } from 'react-router-dom';*/
+
+//vor v5 version
+import { BrowserRouter, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Card from './components/Card';
 
 
 function App() {
   return (
+    /*
+    for v6 version
     <BrowserRouter>
       <div className="App">
         <NavBar />
@@ -14,9 +21,22 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='contact' element={<Contact />} />
+          <Route path='/card/:user' element={<Card />} />
         </Routes>
       </div>
 
+    </BrowserRouter>*/
+
+    //for v5 version
+    <BrowserRouter>
+      <div className="App">
+        <NavBar />
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/contact' component={Contact} />
+        <Route path='/card/:user' component={Card} />
+
+      </div>
     </BrowserRouter>
 
   );
